@@ -4,7 +4,7 @@
 
 layout: home
 title: About
-permalink: /index/
+permalink: /
 ---
 
 This is a test
