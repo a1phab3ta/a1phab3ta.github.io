@@ -1,117 +1,16 @@
+---
+layout: page
+title: Home
+permalink: /
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Homelab</title>
-    <style>
-        * {
-            cursor: url('better_cursor_black.png'), auto;
-        }
-        body {
-            font-family: monospace;
-            background-color: #000000;
-            color: #efe525;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            padding: 15px;
-            text-align: center;
-        }
-        nav #a {
-            font-size: 24px;
-            color: #fcfcfc;
-            margin: 15px 15px;
-            margin-top: 30px;
-            padding: 15px;
-            text-decoration: none;
-        }
-
-        #a {
-            padding: 10vw;
-        }
-
-        a {
-            transition: border 0.3s ease-in-out;
-            border: 1px solid black;
-
-        }
-
-        a:hover {
-            border-color: #0073ff;
-            color: #0073ff;
-            border-radius: 5px;
-        }
-
-        main {
-            padding: 30px;
-            text-align: center;
-        }
-        footer {
-            margin-top: 30px;
-            padding: 10px;
-            text-align: center;
-        }
-        .button {
-            background-color: #ffffff;
-            color: black;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 10px;
-            font-size: 20px;
-            display: inline-block;
-        }
-        .button:hover {
-            background-color: black;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #typewriter-header {
-            font-size: 48px;
-            display: inline;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        .cursor-blink {
-            display: inline;
-            font-size: 48px;
-            animation: blink 0.75s step-end infinite;
-        }
-
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
-
-        /* New About Me Section Style */
-        #about-me {
-            background-color: #1e1e1e;
-            color: #efe525;
-            padding: 30px;
-            margin-top: 40px;
-            border-radius: 10px;
-        }
-
-        #about-me h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        #about-me p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-    </style>
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
 
@@ -131,23 +30,23 @@
     <section id="featured-projects" style="padding: 40px; text-align: center;">
         <h1 style="font-size: 24px;">Featured:</h1>
         <div style="display: flex; justify-content: space-around; gap: 20px;">
-            <a href="project-link-1.html" style="width: 30%; text-decoration: none;">
+            <a href="/projects/project-1" style="width: 30%; text-decoration: none;">
                 <div class="card" style="background-color: #1e1e1e; color: #efe525; padding: 20px; border-radius: 10px; text-align: center; overflow: hidden;">
-                    <img src="test_img.jpg" alt="Project Image" style="width: 100%; border-radius: 10px;">
+                    <img src="{{ '/assets/images/test_img.jpg' | relative_url }}" alt="Project Image" style="width: 100%; border-radius: 10px;">
                     <h3>Project Name 1</h3>
                 </div>
             </a>
     
-            <a href="project-link-2.html" style="width: 30%; text-decoration: none;">
+            <a href="/projects/project-2" style="width: 30%; text-decoration: none;">
                 <div class="card" style="background-color: #1e1e1e; color: #efe525; padding: 20px; border-radius: 10px; text-align: center; overflow: hidden;">
-                    <img src="test_img.jpg" alt="Project Image" style=" width: 100%; height: 100%; border-radius: 10px;">
+                    <img src="{{ '/assets/images/test_img.jpg' | relative_url }}" alt="Project Image" style=" width: 100%; height: 100%; border-radius: 10px;">
                     <h3>Project Name 2</h3>
                 </div>
             </a>
     
-            <a href="project-link-3.html" style="width: 30%; text-decoration: none;">
+            <a href="/projects/project-3" style="width: 30%; text-decoration: none;">
                 <div class="card" style="background-color: #1e1e1e; color: #efe525; padding: 20px; border-radius: 10px; text-align: center; overflow: hidden;">
-                    <img src="test_img.jpg" alt="Project Image" style="width: 100%; border-radius: 10px;">
+                    <img src="{{ '/assets/images/test_img.jpg' | relative_url }}" alt="Project Image" style="width: 100%; border-radius: 10px;">
                     <h3>Project Name 3</h3>
                 </div>
             </a>
@@ -162,7 +61,7 @@
 
 <section id="about-me">
     <h2>About Me</h2>
-    <p>Hi, I'm Pranav, a passionate cybersecurity enthusiast and penetration tester. I work on various projects in tech and security, focusing on learning, exploring, and solving real-world problems. Since I haven't picked a speciality in cybersecurity at the time I'm writing this, I'm focusing in broadening my range and finding what really resonates with me, so I'll be trying frankly a lot of random things. I hope that the documentation of my explorations is both informative and also lets you know a little about me as a person.</p>
+    <p>Hi, I'm Pranav, a passionate cybersecurity enthusiast and penetration tester. I work on various projects in tech and security, focusing on learning, exploring, and solving real-world problems. Since I haven't picked a specialty in cybersecurity at the time I'm writing this, I'm focusing on broadening my range and finding what really resonates with me. I’ll be trying quite a lot of random things, and I hope my documentation of these explorations is both informative and also lets you know a little about me as a person.</p>
 </section>
 
 <footer>
