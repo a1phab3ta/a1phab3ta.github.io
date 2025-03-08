@@ -1,0 +1,105 @@
+* {
+    cursor: url('better_cursor_black.png'), auto;
+}
+body {
+    font-family: monospace;
+    background-color: #000000;
+    color: #efe525;
+    margin: 0;
+    padding: 0;
+}
+header {
+    padding: 15px;
+    text-align: center;
+}
+nav #a {
+    font-size: 24px;
+    color: #fcfcfc;
+    margin: 15px 15px;
+    margin-top: 30px;
+    padding: 15px;
+    text-decoration: none;
+}
+
+#a {
+    padding: 10vw;
+}
+
+a {
+    transition: border 0.3s ease-in-out;
+    border: 1px solid black;
+
+}
+
+a:hover {
+    border-color: #0073ff;
+    color: #0073ff;
+    border-radius: 5px;
+}
+
+main {
+    padding: 30px;
+    text-align: center;
+}
+footer {
+    margin-top: 30px;
+    padding: 10px;
+    text-align: center;
+}
+.button {
+    background-color: #ffffff;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 20px;
+    display: inline-block;
+}
+.button:hover {
+    background-color: black;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#typewriter-header {
+    font-size: 48px;
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cursor-blink {
+    display: inline;
+    font-size: 48px;
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* New About Me Section Style */
+#about-me {
+    background-color: #1e1e1e;
+    color: #efe525;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+#about-me h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#about-me p {
+    font-size: 18px;
+    line-height: 1.6;
+}
