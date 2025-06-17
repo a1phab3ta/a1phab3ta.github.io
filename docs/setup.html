@@ -1,0 +1,195 @@
+---
+permalink: /setup/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <style>
+        * {
+            cursor: url('/docs/assets/images/better_cursor_black.png'), auto;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: monospace;
+            background-color: #000000;
+            color: #efe525;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 15px;
+            text-align: center;
+        }
+        nav #a {
+            font-size: 24px;
+            color: #fcfcfc;
+            margin: 15px 15px;
+            margin-top: 30px;
+            padding: 15px;
+            text-decoration: none;
+        }
+        #a {
+            padding: 10vw;
+        }
+        a {
+            transition: border 0.3s ease-in-out;
+            border: 1px solid black;
+        }
+        a:hover {
+            border-color: #0073ff;
+            color: #0073ff;
+            border-radius: 5px;
+        }
+        .header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #typewriter-header {
+            font-size: 48px;
+            display: inline;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .cursor-blink {
+            display: inline;
+            font-size: 48px;
+            animation: blink 0.75s step-end infinite;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        main {
+            font-size: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+        .search-bar {
+            margin: 30px auto;
+            text-align: center;
+        }
+        .search-bar input {
+            font-family: monospace;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            width: 80%;
+            max-width: 400px;
+        }
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            color: #efe525;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin-top: 15px;
+            font-size: 20px;
+        }
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 id="typewriter-header"></h1>
+            <span class="cursor-blink">█</span>
+        </div>
+        <nav>
+            <a id='a' href="/">Home</a>
+            <a id='a' href="/contact/">Contact</a>
+            <a id="a" href="/projects">Projects</a>
+        </nav>
+    </header>  
+    <main>
+        <h2>
+            These are the specs of my computer that I use as a homelab.
+        </h2>
+
+        <h3>
+            HOST:
+        </h3>
+            Processor: <b>13th Gen Intel(R) Core(TM) i7-1355U  1.70 GHZ</b>
+            <br>
+            RAM: <b>16.0 GB</b>
+            <br>
+            Storage: <b>954 GB (D:)</b>
+            <br>
+            Motherboard: <b>LENOVO LNVNB161216</b>
+            <br>
+            Graphics card: <b>Intel(R) Iris(R) Xe</b>
+            <br>
+            Network: <b>Wi-Fi (5 Ghz Band)</b>
+            <br>
+            OS: <b>Windows 11</b>
+            <br>
+            Hypervisor: <b>VirtualBox</b>
+            <br>
+        <h3>
+            VM:
+        </h3>
+             
+        vCPU Count: <b>2</b>
+        <br>
+        RAM: <b>2 GB</b>
+        <br>
+        Disk: <b>80 GB</b>
+        <br>
+        Network Interface: <b>Bridged</b>
+        <br>
+        OS: <b>Kali Linux 2024.4</b>
+    </main>  
+    <script>
+        const header = document.getElementById('typewriter-header');
+        const text = "My Setup";
+        let index = 0;
+    
+        function typeText() {
+            if (index < text.length) {
+                if (text.charAt(index) !== " ") {
+                    header.innerText += text.charAt(index);
+                    index++;
+                    setTimeout(typeText, 100);
+                } else {
+                    header.innerText += " " + text.charAt(index + 1);
+                    index += 2;
+                    setTimeout(typeText, 100);
+                }
+            }
+        }
+    
+    typeText();
+
+    </script>
+</body>
+
+<footer>
+    <p>Built with Jekyll & GitHub Pages</p>
+</footer>
