@@ -1,6 +1,7 @@
 ---
-permalink: /setup/
+permalink: /homelab/projects
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +66,6 @@ permalink: /setup/
             }
         }
         main {
-            font-size: 20px;
             padding: 30px;
             text-align: center;
         }
@@ -117,79 +117,89 @@ permalink: /setup/
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1 id="typewriter-header"></h1>
-            <span class="cursor-blink">█</span>
-        </div>
-        <nav>
-            <a id='a' href="/">Home</a>
-            <a id='a' href="/contact/">Contact</a>
-            <a id="a" href="/projects">Projects</a>
-        </nav>
-    </header>  
-    <main>
-        <h2>
-            These are the specs of my computer that I use as a homelab.
-        </h2>
 
-        <h3>
-            HOST:
-        </h3>
-            Processor: <b>13th Gen Intel(R) Core(TM) i7-1355U  1.70 GHZ</b>
-            <br>
-            RAM: <b>16.0 GB</b>
-            <br>
-            Storage: <b>954 GB (D:)</b>
-            <br>
-            Motherboard: <b>LENOVO LNVNB161216</b>
-            <br>
-            Graphics card: <b>Intel(R) Iris(R) Xe</b>
-            <br>
-            Network: <b>Wi-Fi (5 Ghz Band)</b>
-            <br>
-            OS: <b>Windows 11</b>
-            <br>
-            Hypervisor: <b>VirtualBox</b>
-            <br>
-        <h3>
-            VM:
-        </h3>
-             
-        vCPU Count: <b>2</b>
-        <br>
-        RAM: <b>2 GB</b>
-        <br>
-        Disk: <b>80 GB</b>
-        <br>
-        Network Interface: <b>Bridged</b>
-        <br>
-        OS: <b>Kali Linux 2024.4</b>
-    </main>  
-    <script>
-        const header = document.getElementById('typewriter-header');
-        const text = "My Setup";
-        let index = 0;
-    
-        function typeText() {
-            if (index < text.length) {
-                if (text.charAt(index) !== " ") {
-                    header.innerText += text.charAt(index);
-                    index++;
-                    setTimeout(typeText, 100);
-                } else {
-                    header.innerText += " " + text.charAt(index + 1);
-                    index += 2;
-                    setTimeout(typeText, 100);
-                }
-            }
-        }
-    
-    typeText();
+<header>
+    <div class="header-container">
+        <h1 id="typewriter-header"></h1>
+        <span class="cursor-blink">█</span>
+    </div>
+    <nav>
+        <a id='a' href="/homelab">Home</a>
+        <a id='a' href="/homelab/contact/">Contact</a>
+        <a id="a" href="/homelab/setup">My Setup</a>
+    </nav>
+</header>
 
-    </script>
-</body>
+<main>
+    <h2>These are the experiments and projects I've worked on in my homelab.</h2>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search projects..." onkeyup="filterProjects()">
+    </div>
+
+    <div class="projects-grid" id="projectContainer">
+        <a href="project-link-1.html" class="card">
+            <img src="/docs/assets/images/test_img.jpg" alt="Project 1">
+            <h3>Project Name 1</h3>
+        </a>
+        <a href="project-link-2.html" class="card">
+            <img src="/docs/assets/images/test_img.jpg" alt="Project 2">
+            <h3>Project Name 2</h3>
+        </a>
+        <a href="project-link-3.html" class="card">
+            <img src="/docs/assets/images/test_img.jpg" alt="Project 3">
+            <h3>Project Name 3</h3>
+        </a>
+        <a href="project-link-4.html" class="card">
+            <img src="/docs/assets/images/test_img.jpg" alt="Project 4">
+            <h3>Test Project</h3>
+        </a>
+        <a href="project-link-5.html" class="card">
+            <img src="/docs/assets/images/test_img.jpg" alt="Project 5">
+            <h3>This is a project</h3>
+        </a>
+        <a href="project-link-6.html" class="card">
+            <img src="/docs/assets/images/test_img.jpg" alt="Project 6">
+            <h3>Hello</h3>
+        </a>
+    </div>
+</main>
 
 <footer>
     <p>Built with Jekyll & GitHub Pages</p>
 </footer>
+
+<script>
+    const header = document.getElementById('typewriter-header');
+    const text = "My Projects";
+    let index = 0;
+
+    function typeText() {
+        if (index < text.length) {
+            if (text.charAt(index) !== " ") {
+                header.innerText += text.charAt(index);
+                index++;
+                setTimeout(typeText, 100);
+            } else {
+                header.innerText += " " + text.charAt(index + 1);
+                index += 2;
+                setTimeout(typeText, 100);
+            }
+        }
+    }
+
+    function filterProjects() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const cards = document.getElementById('projectContainer').getElementsByClassName('card');
+
+        for (let card of cards) {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            card.style.display = title.includes(input) ? 'block' : 'none';
+        }
+    }
+
+    typeText();
+</script>
+
+</body>
+</html>
