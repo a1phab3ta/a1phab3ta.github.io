@@ -205,7 +205,7 @@ permalink: /homelab
                 let innerhtml = '<h1 style="font-size: 24px;">Featured:</h1><div style="display: flex; justify-content: space-around; gap: 20px;">';
                 words.forEach(element => {
                     let arrEl = element.split('~');
-                    innerhtml=innerhtml+'<a href=/homelab/"'+arrEl[1]+'" style="width: 30%; text-decoration: none;"><div class="card" style="background-color: #1e1e1e; color: #efe525; padding: 20px; border-radius: 10px; text-align: center; overflow: hidden;"><img src="/docs/assets/images/'+arrEl[1]+'.jpg" alt="Project Image" style="width: 100%; border-radius: 10px;"><h3>'+arrEl[0]+'</h3></div></a>';
+                    innerhtml=innerhtml+'<a href="/homelab/'+arrEl[1]+'" style="width: 30%; text-decoration: none;"><div class="card" style="background-color: #1e1e1e; color: #efe525; padding: 20px; border-radius: 10px; text-align: center; overflow: hidden;"><img src="/docs/assets/images/'+arrEl[1]+'.jpg" alt="Project Image" style="width: 100%; border-radius: 10px;"><h3>'+arrEl[0]+'</h3></div></a>';
                 });
                 innerhtml+='</div>';
                 f.innerHTML=innerhtml;
