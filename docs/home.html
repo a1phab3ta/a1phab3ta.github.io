@@ -1,0 +1,118 @@
+---
+permalink: /
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    * {
+      cursor: url('/docs/assets/images/better_cursor_black.png'), auto;
+    }
+    body {
+      font-family: monospace;
+      background-color: #000;
+      color: #efe525;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 40px;
+    }
+    .header-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #typewriter-header {
+      font-size: 48px;
+      display: inline;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .cursor-blink {
+      display: inline;
+      font-size: 48px;
+      animation: blink 0.75s step-end infinite;
+    }
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+    .choice-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 80px;
+      gap: 50px;
+    }
+    .choice-card {
+      background-color: #1e1e1e;
+      color: #efe525;
+      padding: 40px;
+      border-radius: 15px;
+      width: 250px;
+      text-decoration: none;
+      transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
+      border: 2px solid black;
+    }
+    .choice-card:hover {
+      border-color: #0073ff;
+      color: #0073ff;
+      border-radius: 15px;
+    }
+    footer {
+      margin-top: 100px;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <h1 id="typewriter-header"></h1>
+    <span class="cursor-blink">█</span>
+  </div>
+</header>
+
+<main>
+  <h2>Select Your Destination:</h2>
+  <div class="choice-container">
+    <a href="/portfolio" class="choice-card">
+      <h2>CS Portfolio</h2>
+      <p>Personal Coding Projects I've Done</p>
+    </a>
+    <a href="/homelab" class="choice-card">
+      <h2>Homelab</h2>
+      <p>Cybersecurity experiments and personal playground.</p>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <p>Built with Jekyll & GitHub Pages</p>
+</footer>
+
+<script>
+  const header = document.getElementById('typewriter-header');
+  const text = "Welcome to My Site";
+  let index = 0;
+
+  function typeText() {
+    if (index < text.length) {
+      header.innerText += text.charAt(index);
+      index++;
+      setTimeout(typeText, 100);
+    }
+  }
+  typeText();
+</script>
+
+</body>
+</html>
