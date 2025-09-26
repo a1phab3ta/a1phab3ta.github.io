@@ -100,18 +100,26 @@ permalink: /
 </footer>
 
 <script>
-  const header = document.getElementById('typewriter-header');
-  const text = "Welcome to My Site";
-  let index = 0;
+    const header = document.getElementById('typewriter-header');
+    const text = "Welcome to My Site";
+    let index = 0;
 
-  function typeText() {
-    if (index < text.length) {
-      header.innerText += text.charAt(index);
-      index++;
-      setTimeout(typeText, 100);
+    function typeText() {
+        if (index < text.length) {
+            if (text.charAt(index) !== " "){
+                header.innerText += text.charAt(index);
+                index++;
+                setTimeout(typeText, 100);
+            }
+            else {
+                header.innerText += " " + text.charAt(index+1)
+                index += 2;
+                setTimeout(typeText, 100);
+            }
+        }
     }
-  }
-  typeText();
+    
+    typeText();
 </script>
 
 </body>

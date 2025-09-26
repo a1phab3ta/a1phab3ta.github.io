@@ -1,0 +1,205 @@
+---
+permalink: /portfolio/projects/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <style>
+        * {
+            cursor: url('/docs/assets/images/better_cursor_black.png'), auto;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: monospace;
+            background-color: #000000;
+            color: #efe525;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 15px;
+            text-align: center;
+        }
+        nav #a {
+            font-size: 24px;
+            color: #fcfcfc;
+            margin: 15px 15px;
+            margin-top: 30px;
+            padding: 15px;
+            text-decoration: none;
+        }
+        #a {
+            padding: 10vw;
+        }
+        a {
+            transition: border 0.3s ease-in-out;
+            border: 1px solid black;
+        }
+        a:hover {
+            border-color: #0073ff;
+            color: #0073ff;
+            border-radius: 5px;
+        }
+        .header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #typewriter-header {
+            font-size: 48px;
+            display: inline;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .cursor-blink {
+            display: inline;
+            font-size: 48px;
+            animation: blink 0.75s step-end infinite;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        main {
+            padding: 30px;
+            text-align: center;
+        }
+        .search-bar {
+            margin: 30px auto;
+            text-align: center;
+        }
+        .search-bar input {
+            font-family: monospace;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            width: 80%;
+            max-width: 400px;
+        }
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            color: #efe525;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin-top: 15px;
+            font-size: 20px;
+        }
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <h1 id="typewriter-header"></h1>
+        <span class="cursor-blink">█</span>
+    </div>
+    <nav>
+        <a id='a' href="/portfolio">Home</a>
+        <a id='a' href="/contact/">Contact</a>
+        <a id='a' href="/homelab">Homelab</a>
+    </nav>
+</header>
+
+<main>
+    <h2>These are the experiments and projects I've worked on in my homelab.</h2>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search projects..." onkeyup="filterProjects()">
+    </div>
+
+    <div class="projects-grid" id="projectContainer">
+        <a href="project-link-1.html" class="card">
+            <img src="/docs/assets/images/test_img.jpg" alt="Project 1">
+            <h3>Project Name 1</h3>
+        </a>
+        <a href="project-link-2.html" class="card">
+            <img src="/docs/assets/images/test_img.jpg" alt="Project 2">
+            <h3>Project Name 2</h3>
+        </a>
+        <a href="project-link-3.html" class="card">
+            <img src="/docs/assets/images/test_img.jpg" alt="Project 3">
+            <h3>Project Name 3</h3>
+        </a>
+        <a href="project-link-4.html" class="card">
+            <img src="/docs/assets/images/test_img.jpg" alt="Project 4">
+            <h3>Test Project</h3>
+        </a>
+        <a href="project-link-5.html" class="card">
+            <img src="/docs/assets/images/test_img.jpg" alt="Project 5">
+            <h3>This is a project</h3>
+        </a>
+        <a href="project-link-6.html" class="card">
+            <img src="/docs/assets/images/test_img.jpg" alt="Project 6">
+            <h3>Hello</h3>
+        </a>
+    </div>
+</main>
+
+<footer>
+    <p>Built with Jekyll & GitHub Pages</p>
+</footer>
+
+<script>
+    const header = document.getElementById('typewriter-header');
+    const text = "My Projects";
+    let index = 0;
+
+    function typeText() {
+        if (index < text.length) {
+            if (text.charAt(index) !== " ") {
+                header.innerText += text.charAt(index);
+                index++;
+                setTimeout(typeText, 100);
+            } else {
+                header.innerText += " " + text.charAt(index + 1);
+                index += 2;
+                setTimeout(typeText, 100);
+            }
+        }
+    }
+
+    function filterProjects() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const cards = document.getElementById('projectContainer').getElementsByClassName('card');
+
+        for (let card of cards) {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            card.style.display = title.includes(input) ? 'block' : 'none';
+        }
+    }
+
+    typeText();
+</script>
+
+</body>
+</html>
