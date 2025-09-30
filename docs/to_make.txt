@@ -1,0 +1,5 @@
+Contact page
+Make Homepage Options bigger
+Make it look better
+Make a txt file to make project tabs
+Build Sections for CTF Writeups vs Projects in Homelab
